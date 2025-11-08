@@ -10,7 +10,7 @@ const Projects = () => {
   });
 
   const [activeTab, setActiveTab] = useState('major');
-  const [selectedProject, setSelectedProject] = useState(null);
+  // Removed unused selectedProject state to fix ESLint error
 
   const projectCategories = [
     { id: 'major', name: 'Major Projects', icon: <FaCode /> },
@@ -174,7 +174,7 @@ const Projects = () => {
                 animate="visible"
                 exit="exit"
               >
-                {getProjectsByCategory().map((project, index) => (
+                {getProjectsByCategory().map((project) => (
                   <motion.div 
                     key={project.id}
                     className="project-card"

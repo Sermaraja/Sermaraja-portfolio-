@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaCode, FaServer, FaMobile, FaDatabase, FaCloud, FaCogs } from 'react-icons/fa';
+import { FaCode, FaServer } from 'react-icons/fa';
 
 const Experience = () => {
   const [ref, inView] = useInView({
@@ -20,15 +20,15 @@ const Experience = () => {
       icon: <FaServer />,
       responsibilities: [
         "Designed and developed web applications and projects for clients using modern technologies.",
-        "Created responsive and user-friendly UI/UX designs to enhance user experience",
-        "Collaborated with team members to plan, build, and deploy full-stack applications",
-        "Integrated backend services and APIs using Python and cloud platforms like Azure",
-        "Utilized Git for version control and efficient team collaboration"
+        "Created responsive and user-friendly UI/UX designs to enhance user experience.",
+        "Collaborated with team members to plan, build, and deploy full-stack applications.",
+        "Integrated backend services and APIs using Python and cloud platforms like Azure.",
+        "Utilized Git for version control and efficient team collaboration."
       ],
       technologies: ["Flask", "Azure", "GitHub", "Python", "UI/UX prototyping"],
       achievements: [
-        "Improved system performance by 30% through optimization",
-        "Improved user interface and performance through responsive design techniques"
+        "Improved system performance by 30% through optimization.",
+        "Enhanced user interface and performance through responsive design techniques."
       ]
     },
     {
@@ -38,16 +38,16 @@ const Experience = () => {
       location: "On-Site",
       icon: <FaCode />,
       responsibilities: [
-        "Gained hands-on experience in developing responsive web applications using HTML, CSS, and JavaScript",
-        "Built and enhanced interactive web interfaces to improve user experience",
-        "Implemented and tested web application features to ensure functionality and performance",
-        "Troubleshot front-end issues and optimized web pages for speed and usability",
-        "Collaborated with team members to develop and maintain web projects"
+        "Gained hands-on experience in developing responsive web applications using HTML, CSS, and JavaScript.",
+        "Built and enhanced interactive web interfaces to improve user experience.",
+        "Implemented and tested web application features to ensure functionality and performance.",
+        "Troubleshot front-end issues and optimized web pages for speed and usability.",
+        "Collaborated with team members to develop and maintain web projects."
       ],
-      technologies: [ "JavaScript", "HTML5", "CSS3", "Git"],
+      technologies: ["JavaScript", "HTML5", "CSS3", "Git"],
       achievements: [
-        "Delivered 5+ responsive web applications ahead of schedule",
-        "Improved page load speed by 25% through optimization"
+        "Delivered 5+ responsive web applications ahead of schedule.",
+        "Improved page load speed by 25% through optimization."
       ]
     }
   ];

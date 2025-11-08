@@ -2,18 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa';
 
+// ✅ Moved outside component so ESLint won’t warn
+const texts = [
+  "Web Developer",
+  "System Associate",
+  "UI/UX Designer",
+  "Problem Solver"
+];
+
 const Hero = () => {
   const [textIndex, setTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
-
-  const texts = [
-    "Web Developer",
-    "System Associate",
-    "UI/UX Designer",
-    "Problem Solver"
-  ];
 
   useEffect(() => {
     const handleTyping = () => {
@@ -38,15 +39,12 @@ const Hero = () => {
 
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
-  }, [currentText, isDeleting, textIndex, texts, typingSpeed]);
+  }, [currentText, isDeleting, textIndex, typingSpeed]); // ✅ texts removed
 
   const handleDownload = () => {
-    // Create a temporary anchor element
     const link = document.createElement('a');
     link.href = '/images/SERMARAJA V_Resume-1.pdf';
     link.download = 'Sermaraja_V_Resume.pdf';
-    
-    // Append to body, click, and remove
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -68,7 +66,10 @@ const Hero = () => {
               <span className="typing-text">{currentText}</span>
               <span className="cursor">|</span>
             </div>
-            <p>A passionate Web Developer and System Associate with expertise in creating innovative digital solutions. I specialize in building responsive websites and applications with modern technologies.</p>
+            <p>
+              A passionate Web Developer and System Associate with expertise in creating innovative digital solutions. 
+              I specialize in building responsive websites and applications with modern technologies.
+            </p>
             <div className="hero-btns">
               <a href="#projects" className="btn">View My Work</a>
               <a href="#contact" className="btn secondary">Contact Me</a>
@@ -88,6 +89,7 @@ const Hero = () => {
               </a>
             </div>
           </motion.div>
+
           <motion.div 
             className="hero-image"
             initial={{ opacity: 0, x: 50 }}
@@ -102,7 +104,6 @@ const Hero = () => {
               <div className="decoration-box box-1"></div>
               <div className="decoration-box box-2"></div>
             </div>
-           
           </motion.div>
         </div>
       </div>
